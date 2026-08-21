@@ -1,0 +1,172 @@
+
+And now, the answer to our second puzzle.
+
+Glue two line segments together along their common boundary, a 0-sphere of two points, and the result is a circle, or S¹.
+
+Likewise, gluing two disks along their common boundary circle gives a 2-sphere.
+
+In general, we can construct an n-sphere by gluing two n-balls together along their common boundary:
+
+    Sⁿ = Bⁿ ∪_{Sⁿ⁻¹} Bⁿ.
+
+For S³, this decomposition into two 3-balls is called a genus-zero Heegaard splitting:
+
+    S³ = D³₊ ∪_{S²} D³₋.
+
+Why genus zero? A 3-ball is a handlebody of genus zero; a solid torus has genus one, and adding handles gives higher genus.
+
+Indeed, every closed, orientable 3-manifold can be split into two handlebodies of the same genus, glued along their common boundary.
+
+
+THE MAGIC TRICK: FROM TWO 3-BALLS TO TWO SOLID TORI
+
+Now for a little magic trick—one that requires no fourth dimension.
+
+We begin with the genus-zero Heegaard splitting
+
+    S³ = D³₊ ∪_{S²} D³₋.
+
+Choose inside D³₊ a 1-handle
+
+    H ≅ D² × I
+
+meeting the splitting sphere in two attaching disks:
+
+    A = H ∩ S² ≅ D² × ∂I.
+
+Now change which side owns the handle: remove H from the first 3-ball and attach it to the second:
+
+    S³ = closure(D³₊ ∖ H) ∪_Σ (D³₋ ∪_A H).
+
+S³ itself is unchanged; only the surface separating its two pieces has moved.
+
+Removing an unknotted tunnel from one 3-ball produces a solid torus,
+
+    closure(D³₊ ∖ H) ≅ S¹ × D²,
+
+and attaching the 1-handle to the other does the same:
+
+    D³₋ ∪_A H ≅ D² × S¹.
+
+Their new common boundary combines the annulus left after removing the two attaching disks,
+
+    closure(S² ∖ A) ≅ S¹ × I,
+
+with the annular side of the handle:
+
+    ∂H ∖ A ≅ S¹ × I.
+
+Gluing them along their boundary circles gives
+
+    Σ ≅ (S¹ × I) ∪_{S¹ × ∂I} (S¹ × I)
+      ≅ S¹ × S¹
+      = T².
+
+Therefore,
+
+    S³ ≅ (S¹ × D²) ∪_{T²} (D² × S¹).
+
+And there it is: reassigning a 1-handle has turned the two 3-ball pieces into solid tori and the splitting sphere into a torus, while S³ remains unchanged. This operation, called stabilization, turns the genus-zero Heegaard splitting of S³ into one of genus one.
+
+
+MERIDIANS, LONGITUDES, AND THE GLUING MAP
+
+Now pay attention to the longitude in the animation. Under the quaternion multiplication used here, the longitude of one solid torus is identified with the meridian of the other.
+
+A meridian bounds a disk inside its solid torus; a longitude runs around the torus and does not. In the genus-one splitting of S³, the meridians of the two solid tori become curves on the common boundary torus that intersect exactly once.
+
+Choosing the longitude appropriately, we may say that the meridian of one solid torus is glued to the longitude of the other. Their single intersection is what makes the result S³.
+
+But what if we change the gluing map?
+
+Map the meridian instead to a primitive curve of slope p/q on the boundary torus, and—congratulations—you have constructed the lens space
+
+    L(p,q).
+
+A warning: the new gluing map, not an arbitrary knot, produces the lens space. Although a primitive slope may be drawn as a torus knot, here it is the image of a meridian under that map.
+
+
+DEHN TWISTS
+
+How can we describe all these different gluing maps?
+
+The strange-looking motions in the animation are Dehn twists: cut the torus along a simple closed curve, twist one side through a full turn, and glue it back. The torus looks unchanged, but its meridians, longitudes, and other slopes have been rearranged.
+
+[Show a square sheet of paper being glued into a torus.]
+
+This square is a fundamental polygon, also called a fundamental domain: a flat region whose edges are identified to build a surface. Gluing one pair of opposite edges makes a cylinder, and gluing the remaining pair makes a torus.
+
+In this square model, a Dehn twist looks like a shear. Such twists generate all orientation-preserving mapping classes of the torus, with their action on the meridian and longitude recorded by matrices in SL(2,Z).
+
+Thus a few simple twists can produce many 3-manifolds: the topology lies not only in the solid tori, but also in the map gluing their boundaries.
+
+
+THE QUOTIENT DESCRIPTION OF LENS SPACES
+
+For another beautiful view of a lens space, regard S³ as the unit sphere in C²:
+
+    S³ = {(z₁,z₂) ∈ C² : |z₁|² + |z₂|² = 1}.
+
+Identify points under the cyclic action (z₁,z₂) ↦ (ζz₁, ζ^q z₂), where ζ = exp(2πi/p).
+
+The quotient is the lens space L(p,q), up to the usual choice of convention for p and q.
+
+[Show the fundamental-domain animation for L(5,2).]
+
+A fundamental domain keeps one representative from each collection of points identified by the symmetry. Just as one square represents the whole torus after opposite edges are glued, this single region represents the whole lens space after its boundary points are paired.
+
+For L(5,2), the hemisphere is divided into five colored sectors. As it moves from north to south, it twists by two sectors, identifying northern sector i with southern sector i+2. This twisted identification is the q = 2 in L(5,2).
+
+The action preserves the two solid tori in the genus-one splitting of S³, and their quotients are again solid tori. Thus the quotient and Heegaard-splitting descriptions give the same family of manifolds.
+
+
+WHAT LENS SPACES TEACH US
+
+Lens spaces reveal how much—and how little—algebraic invariants can detect.
+
+For instance, L(7,1) and L(7,2) are homotopy equivalent but not homeomorphic, so even homotopy type does not always determine the topology of a 3-manifold.
+
+Similarly, L(5,1) and L(5,2) have the same homology groups:
+
+    H₀ ≅ Z,
+    H₁ ≅ Z/5Z,
+    H₂ = 0,
+    H₃ ≅ Z.
+
+Yet L(5,1) and L(5,2) are not homotopy equivalent. Homology sees something, but not everything.
+
+
+FROM LENS SPACES TO DEHN SURGERY
+
+Now let us generalize the construction once more.
+
+Remove an open tubular neighborhood of a knot K in S³. Since that neighborhood is a solid torus, the remaining knot exterior has a torus boundary.
+
+Glue a solid torus back in while choosing a different boundary curve as its meridian. This is Dehn surgery.
+
+Lens spaces arise from Dehn surgery on the unknot. Performing surgery on more complicated knots and links produces a vast collection of 3-manifolds.
+
+The Lickorish–Wallace theorem says that every closed, connected, orientable 3-manifold can be obtained by Dehn surgery on a framed link in S³. Links are essential here: surgery on a single knot cannot produce every such manifold.
+
+This is a main entrance into geometric topology: describe a complicated space by cutting out a simple piece and gluing it back differently.
+
+
+THE POINCARÉ HOMOLOGY SPHERE
+
+What if we replace our simple fundamental region with a dodecahedron.
+
+[Show a dodecahedron.]
+
+Identify each face with its opposite after a 36-degree twist, and the result is the remarkable Poincaré homology sphere.
+
+It has exactly the same homology groups as S³:
+
+    H₀ ≅ Z,
+    H₁ = 0,
+    H₂ = 0,
+    H₃ ≅ Z.
+
+But it is not S³: its fundamental group is the nontrivial binary icosahedral group, with 120 elements.
+
+Poincaré hoped that homology might characterize the 3-sphere. His example proved otherwise and led him to the correct condition: simple connectivity.
+
